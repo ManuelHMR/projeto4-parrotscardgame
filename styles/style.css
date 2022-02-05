@@ -16,7 +16,6 @@ h1{
   color: #75B79E;
 }
 main{
-  padding: 40px 120px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -45,8 +44,9 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+  backface-visibility: hidden;
 }
-.card img{
+ img{
   height: 100px;
   width: 100px;
 }
@@ -61,5 +61,6 @@ main{
 @media (max-width: 600px){
   h1{
     font-size: 36px;
+    text-align: center;
   }
 }
