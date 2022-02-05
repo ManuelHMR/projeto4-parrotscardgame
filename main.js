@@ -6,10 +6,10 @@ function displayCards() {
     main.innerHTML = main.innerHTML + `<div class="card">
     <div class="flipper">
     <div class="cardFront">
-    <img class="frontImg" src="media/front.png" alt="papagaio verde fofinho"/>
+    <img src="media/front.png" alt="papagaio verde fofinho"/>
     </div>
     <div class="cardBack">
-    <img class="frontImg" src="media/bobrossparrot.gif" alt="papagaio verde fofinho"/>
+    ${backImgArr}
     </div>
     </div>
     </div>`
@@ -26,3 +26,10 @@ function gameSize() {
   }
   displayCards()
 }
+//<img src="media/bobrossparrot.gif" alt="gif de papagaio bob ross"/>
+//<img src="media/explodyparrot.gif" alt=" gif de papagaio explosivo"/>
+//<img src="media/fiestaparrot.gif" alt="gif de papagaio festeiro"/>
+//<img src="media/metalparrot.gif" alt="gif de papagaio metaleiro"/>
+//<img src="media/revertiparrot.gif" alt="gif de papagaio reverti"/>
+//<img src="media/tripletsparrot.gif" alt="gif de tres papagaios"/>
+//<img src="media/unicornparrot.gif" alt="gif de papagaio unicornio"/>
