@@ -24,24 +24,30 @@ let backImgArr = [
   backImg6
 ]
 backImgArr = backImgArr.sort(() => Math.random() - 0.5)
-alert(backImgArr)
 
 const main = document.querySelector('main')
+
 function displayCards() {
   main.innerHTML = ``
-  for (let i = 0; i < pairNum * 2; i++) {
-    main.innerHTML =
-      main.innerHTML +
-      `<div class="card">
+  let selectedCards = []
+  let j = 0
+  for (let i = 0; i < pairNum; i++) {
+    selectedCards.push(backImgArr[i])
+    selectedCards.push(backImgArr[i])
+  }
+  selectedCards = selectedCards.sort(() => Math.random() - 0.5)
+  for (j = 0; j < selectedCards.length; j++) {
+    let card = `<div class="card">
     <div class="flipper">
     <div class="cardFront">
     <img src="media/front.png" alt="papagaio verde fofinho"/>
     </div>
     <div class="cardBack">
-    ${backImgArr[6]}
+    ${selectedCards[j]}
     </div>
     </div>
     </div>`
+    main.innerHTML += card
   }
 }
 function gameSize() {
@@ -54,6 +60,4 @@ function gameSize() {
     )
   }
   displayCards()
-
-  
 }
