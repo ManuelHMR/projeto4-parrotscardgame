@@ -1,5 +1,7 @@
-let pairNum = 0
-let tick = 0
+let pairNum = 0;
+let myInterval;
+let tick = document.querySelector(".clock");
+let counter = document.querySelector(".moves");
 const backImg0 =
   '<img src="media/bobrossparrot.gif" alt="gif de papagaio bob ross"/'
 const backImg1 =
@@ -46,6 +48,9 @@ function displayCards() {
     main.innerHTML += card
   }
 }
+ function gameTimer(){
+  tick.innerHTML = parseInt(tick.innerHTML) + 1
+ }
 function gameSize() {
   pairNum = prompt(
     'Com quantos pares de cartas deseja jogar? (limite 2-7 pares)'
@@ -56,15 +61,12 @@ function gameSize() {
     )
   }
   displayCards()
-  gameTimer()
+  tick.innerHTML = 0;
+  counter.innerHTML = 0;
+  clearInterval(myInterval)
+  myInterval = setInterval(gameTimer, 1000)
 }
- function gameTimer(){
-
- }
- function seconds(){
-   
- }
-
  function flipCard(e){
-   e.classList.toggle("flip");
+   e.classList.add("flip");
+   counter.innerHTML = parseInt(counter.innerHTML) + 1
  }
