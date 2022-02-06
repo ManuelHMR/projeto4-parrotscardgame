@@ -25,15 +25,11 @@ main{
   width: 117px;
   display: flex;
   margin: 34px;
-}
-.flipper{	
-  position: relative;
-  width: 100%;
-	height: 100%;
-  transition: transform 1000ms;
   transform-style: preserve-3d;
+  position: relative;
+  transition: transform 1000ms;
 }
-.card:hover .flipper{
+.flip {
   transform: rotateY(180deg);
 }
 .cardFront, .cardBack{

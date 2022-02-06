@@ -1,5 +1,5 @@
 let pairNum = 0
-
+let tick = 0
 const backImg0 =
   '<img src="media/bobrossparrot.gif" alt="gif de papagaio bob ross"/'
 const backImg1 =
@@ -24,9 +24,7 @@ let backImgArr = [
   backImg6
 ]
 backImgArr = backImgArr.sort(() => Math.random() - 0.5)
-
 const main = document.querySelector('main')
-
 function displayCards() {
   main.innerHTML = ``
   let selectedCards = []
@@ -37,14 +35,12 @@ function displayCards() {
   }
   selectedCards = selectedCards.sort(() => Math.random() - 0.5)
   for (j = 0; j < selectedCards.length; j++) {
-    let card = `<div class="card">
-    <div class="flipper">
+    let card = `<div class="card" onclick="flipCard(this)">
     <div class="cardFront">
     <img src="media/front.png" alt="papagaio verde fofinho"/>
     </div>
     <div class="cardBack">
     ${selectedCards[j]}
-    </div>
     </div>
     </div>`
     main.innerHTML += card
@@ -60,4 +56,15 @@ function gameSize() {
     )
   }
   displayCards()
+  gameTimer()
 }
+ function gameTimer(){
+
+ }
+ function seconds(){
+   
+ }
+
+ function flipCard(e){
+   e.classList.toggle("flip");
+ }
