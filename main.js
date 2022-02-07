@@ -67,6 +67,23 @@ function gameSize() {
   myInterval = setInterval(gameTimer, 1000)
 }
  function flipCard(e){
-   e.classList.add("flip");
-   counter.innerHTML = parseInt(counter.innerHTML) + 1
+  e.classList.add("flip");
+  counter.innerHTML = parseInt(counter.innerHTML) + 1;
+  let classCheck = e.classList.contains('selected')
+  if(classCheck === false){
+    e.classList.add("selected")
+  }
+  let selected = document.querySelectorAll(".selected")
+  if(selected.length === 1){}
+  if(selected.length ===2){
+    if(selected[0].innerHTML === selected[1].innerHTML){document.querySelectorAll(".selected").forEach(e => e.classList.remove("selected"))}
+    if(selected [0].innerHTML !== selected[1].innerHTML){
+      setTimeout(function(){
+        document.querySelectorAll(".selected").forEach(e => e.classList.remove("flip"))
+        document.querySelectorAll(".selected").forEach(e => e.classList.remove("selected"))},
+        1000)
+    } 
+  }
  }
+
+ 
