@@ -93,16 +93,25 @@ function gameSize() {
     boardLocker = true;
     setTimeout(function(){
       boardLocker = false
-    }, 1050)
+    }, 1000)
   }
   e.classList.add("flip");
   flipped = document.querySelectorAll(".flip")
   checkFinish()
  }
 function checkFinish(){
-if(flipped.length === num && flipped.length !== 0){
+  if(flipped.length === num && flipped.length !== 0){
+    setTimeout(victoryAlert, 1000)
+  } 
+}
+
+function victoryAlert(){
   alert(`Você ganhou em ${counter.innerHTML} jogadas!
 
   Tempo de jogo: ${tick.innerHTML} segundos`)
-  } 
+  let restart = prompt('Deseja jogar novamente? (S ou N)')
+  while(restart !== 'S'){
+    restart = prompt('Deseja jogar novamente? (S ou N)')
+  }
+  gameSize()
 }

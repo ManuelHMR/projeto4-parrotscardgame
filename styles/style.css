@@ -12,6 +12,7 @@ header{
 .infos{
   display: flex;
   justify-content: space-evenly;
+  color: #75B79E;
 }
 h1{
   font-weight: 700;
